@@ -6,9 +6,9 @@ using UnityEngine;
 public class VectorCheck : MonoBehaviour
 {
     [SerializeField]
-    Vector3 _force;
+    float _force;
     [SerializeField]
-    Vector3 _velocity;
+    float _velocity;
 
     Rigidbody _rb;
 
@@ -16,7 +16,7 @@ public class VectorCheck : MonoBehaviour
     void Start()
     {
         _rb= GetComponent<Rigidbody>();
-        _rb.velocity = _velocity;
+        _rb.velocity = transform.forward * _velocity;
     }
 
     // Update is called once per frame
@@ -30,7 +30,7 @@ public class VectorCheck : MonoBehaviour
     {
         if (_rb)
         {
-            _rb.AddForce(_force, ForceMode.Force);
+            _rb.AddForce(transform.forward * _force, ForceMode.Force);
         }
     }
 }
