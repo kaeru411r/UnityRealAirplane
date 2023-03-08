@@ -5,8 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class VectorCheck : MonoBehaviour
 {
-    [SerializeField] Vector3 _force;
-    [SerializeField] Vector3 _velocity;
+    [SerializeField]
+    Vector3 _force;
+    [SerializeField]
+    Vector3 _velocity;
 
     Rigidbody _rb;
 

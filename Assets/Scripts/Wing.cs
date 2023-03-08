@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Wing : MonoBehaviour
 {
-    [SerializeField] float _lift;
+    [SerializeField]
+    float _lift;
+
 
     Rigidbody _rb;
 
@@ -24,6 +26,8 @@ public class Wing : MonoBehaviour
             Vector3 force = (transform.up - Mathf.Sign(Vector3.Dot(transform.forward, _rb.velocity)) * transform.forward) * power * _lift;
             Debug.DrawRay(transform.position, force);
             _rb.AddForceAtPosition(force, transform.position, ForceMode.Force);
+
+
         }
     }
 }

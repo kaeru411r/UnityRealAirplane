@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
-    [SerializeField] float _pitch;
-    [SerializeField] float _roll;
-    [SerializeField] Wing[] _pitchWings;
-    [SerializeField] Wing[] _rightWings;
-    [SerializeField] Wing[] _leftWings;
+    [SerializeField] 
+    float _pitch;
+    [SerializeField] 
+    float _roll;
+    [SerializeField] 
+    Wing[] _pitchWings;
+    [SerializeField] 
+    Wing[] _rightWings;
+    [SerializeField] 
+    Wing[] _leftWings;
     // Start is called before the first frame update
     void Start()
     {
