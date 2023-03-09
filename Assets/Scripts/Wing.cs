@@ -17,7 +17,13 @@ public class Wing : MonoBehaviour
 
     Rigidbody _rb;
 
-    public float DefaultLift { get => _defaultLift; set => _defaultLift = value; }
+    public float DefaultLift
+    {
+        get => _defaultLift; set
+        {
+            _defaultLift = Mathf.Clamp(value, -1, 1);
+        }
+    }
     public float UpperLimit { get => _upperLimit; set => _upperLimit = value; }
     public float DownerLimit { get => _downerLimit; set => _downerLimit = value; }
 
@@ -31,14 +37,16 @@ public class Wing : MonoBehaviour
         if (_rb)
         {
             Vector3 velocity = _rb.velocity + _rb.GetRelativePointVelocity(transform.localPosition);
+            float dot = Vector3.Dot(transform.forward, velocity);
 
-            float power = Mathf.Abs(Vector3.Dot(transform.forward, velocity));
-            Vector3 lift = (transform.up * _efficiency - transform.forward) * power * _defaultLift;
+            float power = Mathf.Abs(dot) * _defaultLift;
+            Vector3 lift = transform.up * _efficiency * power;
+            Vector3 lose = transform.forward * -Mathf.Sign(dot) * power;
             Debug.DrawRay(transform.position, lift);
 
             float drag = -Vector3.Dot(transform.up, velocity) * _drag;
             Vector3 dragForce = transform.up * drag;
-            _rb.AddForceAtPosition(lift + dragForce, transform.position, ForceMode.Force);
+            _rb.AddForceAtPosition(lift + lose + dragForce, transform.position, ForceMode.Force);
         }
     }
 }

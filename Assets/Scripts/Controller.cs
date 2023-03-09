@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
-    [SerializeField] 
+    [SerializeField, Range(-1, 1)] 
     float _pitch;
     [SerializeField] 
     float _roll;
