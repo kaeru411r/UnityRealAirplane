@@ -34,7 +34,7 @@ public class Controller : MonoBehaviour
             {
                 if (wing)
                 {
-                    wing.Lift = _pitch / 100;
+                    wing.DefaultLift = _pitch / 100;
                 }
             }
         }

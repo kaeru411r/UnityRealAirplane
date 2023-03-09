@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class Wing : MonoBehaviour
 {
-    [SerializeField]
-    float _lift;
+    [SerializeField, Range(-1, 1)]
+    float _defaultLift;
+    [SerializeField, Range(-1, 1)]
+    float _upperLimit;
+    [SerializeField, Range(-1, 1)]
+    float _downerLimit;
+    [SerializeField, Range(0, 1)]
+    float _efficiency;
     [SerializeField, Range(0, 1)]
     float _drag;
 
     Rigidbody _rb;
 
-    public float Lift { get => _lift; set => _lift = value; }
-
+    public float DefaultLift { get => _defaultLift; set => _defaultLift = value; }
+    public float UpperLimit { get => _upperLimit; set => _upperLimit = value; }
+    public float DownerLimit { get => _downerLimit; set => _downerLimit = value; }
 
     private void Start()
     {
@@ -26,7 +33,7 @@ public class Wing : MonoBehaviour
             Vector3 velocity = _rb.velocity + _rb.GetRelativePointVelocity(transform.localPosition);
 
             float power = Mathf.Abs(Vector3.Dot(transform.forward, velocity));
-            Vector3 lift = (transform.up - Mathf.Sign(Vector3.Dot(transform.forward, velocity)) * transform.forward) * power * _lift;
+            Vector3 lift = (transform.up * _efficiency - transform.forward) * power * _defaultLift;
             Debug.DrawRay(transform.position, lift);
 
             float drag = -Vector3.Dot(transform.up, velocity) * _drag;
