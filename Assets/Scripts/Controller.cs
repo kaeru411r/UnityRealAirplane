@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
-    [SerializeField, Range(-1, 1)] 
+    [SerializeField, Range(-180, 180)] 
     float _pitch;
     [SerializeField] 
     float _roll;
@@ -34,7 +34,7 @@ public class Controller : MonoBehaviour
             {
                 if (wing)
                 {
-                    wing.DefaultLift = _pitch / 100;
+                    wing.DefaultLift = _pitch;
                 }
             }
         }

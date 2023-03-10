@@ -269,10 +269,63 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _defaultLift: 0.3
+  _liftCoefficientCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.0970338
+      outSlope: 0.0970338
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.14747426
+    - serializedVersion: 3
+      time: 15.372846
+      value: 1.0748024
+      inSlope: 0.05453844
+      outSlope: 0.014876986
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.19816706
+      outWeight: 0.79754657
+    - serializedVersion: 3
+      time: 20.10632
+      value: 0.64127994
+      inSlope: -0.17960979
+      outSlope: 0.025489636
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.27509442
+      outWeight: 0.16379912
+    - serializedVersion: 3
+      time: 41.664692
+      value: 1.2214459
+      inSlope: -0.008241073
+      outSlope: -0.008241073
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.13812084
+      outWeight: 0.081852265
+    - serializedVersion: 3
+      time: 90
+      value: 0
+      inSlope: -0.025270263
+      outSlope: -0.025270263
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _upperLimit: 0
   _downerLimit: 0
   _efficiency: 0.4
   _drag: 0.2
+  _densityOfAir: 1.292
+  _erea: 2.1471
 --- !u!65 &451384094
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -615,7 +668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc580e884131ca743aba85b2a45718f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _force: 0
+  _force: 20
   _velocity: 10
 --- !u!114 &829854563
 MonoBehaviour:
@@ -629,7 +682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81a76938a279311459e6c67310aa88f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pitch: -2
+  _pitch: -180
   _roll: 0
   _pitchWings:
   - {fileID: 1210944866}
@@ -804,10 +857,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _defaultLift: 0
+  _liftCoefficientCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _upperLimit: 0
   _downerLimit: 0
   _efficiency: 0
   _drag: 0
+  _densityOfAir: 1.292
+  _erea: 0
 --- !u!65 &1101034042
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -918,11 +979,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90b4f2417c3f99d4299db3b015f8a4b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultLift: -0.02
+  _defaultLift: -180
+  _liftCoefficientCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.0970338
+      outSlope: 0.0970338
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.14747426
+    - serializedVersion: 3
+      time: 15.372846
+      value: 1.0748024
+      inSlope: 0.05453844
+      outSlope: 0.014876986
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.19816706
+      outWeight: 0.79754657
+    - serializedVersion: 3
+      time: 20.10632
+      value: 0.64127994
+      inSlope: -0.17960979
+      outSlope: 0.025489636
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.27509442
+      outWeight: 0.16379912
+    - serializedVersion: 3
+      time: 41.664692
+      value: 1.2214459
+      inSlope: -0.008241073
+      outSlope: -0.008241073
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.13812084
+      outWeight: 0.081852265
+    - serializedVersion: 3
+      time: 90
+      value: 0
+      inSlope: -0.025270263
+      outSlope: -0.025270263
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _upperLimit: 0
   _downerLimit: 0
   _efficiency: 0.4
   _drag: 0.08
+  _densityOfAir: 1.292
+  _erea: 1.4
 --- !u!65 &1210944867
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1034,10 +1148,63 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _defaultLift: 0.3
-  _upperLimit: 0
+  _liftCoefficientCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.0970338
+      outSlope: 0.0970338
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.14747426
+    - serializedVersion: 3
+      time: 15.372846
+      value: 1.0748024
+      inSlope: 0.05453844
+      outSlope: 0.014876986
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.19816706
+      outWeight: 0.79754657
+    - serializedVersion: 3
+      time: 20.10632
+      value: 0.64127994
+      inSlope: -0.17960979
+      outSlope: 0.025489636
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.27509442
+      outWeight: 0.16379912
+    - serializedVersion: 3
+      time: 41.664692
+      value: 1.2214459
+      inSlope: -0.008241073
+      outSlope: -0.008241073
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.13812084
+      outWeight: 0.081852265
+    - serializedVersion: 3
+      time: 90
+      value: 0
+      inSlope: -0.025270263
+      outSlope: -0.025270263
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _upperLimit: -0.4
   _downerLimit: 0
   _efficiency: 0.4
   _drag: 0.2
+  _densityOfAir: 1.292
+  _erea: 2.1471
 --- !u!65 &1486121917
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1148,11 +1315,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90b4f2417c3f99d4299db3b015f8a4b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultLift: -0.02
+  _defaultLift: -180
+  _liftCoefficientCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.0970338
+      outSlope: 0.0970338
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.14747426
+    - serializedVersion: 3
+      time: 15.372846
+      value: 1.0748024
+      inSlope: 0.05453844
+      outSlope: 0.014876986
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.19816706
+      outWeight: 0.79754657
+    - serializedVersion: 3
+      time: 20.10632
+      value: 0.64127994
+      inSlope: -0.17960979
+      outSlope: 0.025489636
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.27509442
+      outWeight: 0.16379912
+    - serializedVersion: 3
+      time: 41.664692
+      value: 1.2214459
+      inSlope: -0.008241073
+      outSlope: -0.008241073
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.13812084
+      outWeight: 0.081852265
+    - serializedVersion: 3
+      time: 90
+      value: 0
+      inSlope: -0.025270263
+      outSlope: -0.025270263
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _upperLimit: 0
   _downerLimit: 0
   _efficiency: 0.4
   _drag: 0.08
+  _densityOfAir: 1.292
+  _erea: 1.4
 --- !u!65 &1741110476
 BoxCollider:
   m_ObjectHideFlags: 0
