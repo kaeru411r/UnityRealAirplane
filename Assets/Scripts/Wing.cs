@@ -52,8 +52,8 @@ public class Wing : MonoBehaviour
             float cl = _liftCoefficientCurve.Evaluate(Mathf.Abs(angle)) * Mathf.Sign(angle);
 
             float power = 0.5f * _airDensity * velocity.sqrMagnitude * _erea * cl;
-            Vector3 lift = Vector3.RotateTowards(velocity.normalized, transform.up, 90f, 0f).normalized *_efficiency * power;
-            Vector3 lose = velocity.normalized * power;
+            Vector3 lift = Vector3.Cross(Vector3.Cross(velocity, -transform.up), velocity).normalized * _efficiency * power;
+            Vector3 lose = -velocity.normalized * power;
 
             float drag = -Vector3.Dot(transform.up, velocity) * _drag;
             Vector3 dragForce = transform.up * drag;
@@ -74,9 +74,10 @@ public class Wing : MonoBehaviour
         float cl = _liftCoefficientCurve.Evaluate(Mathf.Abs(angle)) * Mathf.Sign(angle);
 
         float power = 0.5f * _airDensity * velocity.sqrMagnitude * _erea * cl;
-        Vector3 lift = Vector3.RotateTowards(velocity.normalized, transform.up, 90f, 0f).normalized * _efficiency * power;
+        Vector3 lift = Vector3.Cross(Vector3.Cross(velocity, -transform.up), velocity).normalized * _efficiency * power;
         Debug.DrawRay(transform.position, lift, Color.red);
-        Debug.DrawRay(transform.position, Vector3.RotateTowards(velocity.normalized, transform.up, 90f, 0f).normalized, Color.blue);
+        Debug.DrawRay(transform.position, velocity, Color.blue);
+        Debug.DrawRay(transform.position, -velocity.normalized * Mathf.Abs(power), Color.green);
     }
 }
 
